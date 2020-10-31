@@ -16,6 +16,11 @@ void showItems() {
   
 }
 
+void deleteItem(delIndex) {
+    todo_items.pop_back(delIndex);
+}
+
+
 int main() {
 
 
@@ -28,21 +33,30 @@ int main() {
   addItem("Wow, this is actually dope");
   showItems();
 
-  //std::cin >> action;
-//
-//
-  //if (action == "add") {
-  //  std::string task;
-  //  std::cout << "Write a task:";
-  //  std::cin >> task;
-//
-  //  addItem(task);
-  //  std::cout << "Task: " << task << " has been added to the list\n";
-  //}
-//
-  //if (action == "show") {
-  //  showItems();
-  //}
+  std::cin >> action;
+
+
+  if (action == "add") {
+    std::string task;
+    std::cout << "Write a task:";
+    std::cin >> task;
+
+    addItem(task);
+    std::cout << "Task: " << task << " has been added to the list\n";
+  }
+
+  if (action = "remove") {
+      std::string delItem;
+      std::cout << "Which item would you like to remove? Type in a number.";
+      std::cin >> delItem;
+
+      deleteItem(delItem);
+      std::cout << "Task: " << delItem << " has been removed!";
+  }
+
+  if (action == "show") {
+    showItems();
+  }
 
   return 0;
 
